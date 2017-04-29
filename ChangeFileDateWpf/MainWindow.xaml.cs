@@ -40,6 +40,11 @@ namespace ChangeFileDateWpf
             this.DateTimePickerFileCreationDate.DefaultValue = DateTime.Now;
             this.DateTimePickerLastAccessedDate.DefaultValue = DateTime.Now;
             this.DateTimePickerLastWrittenDate.DefaultValue = DateTime.Now;
+
+            this.DateTimePickerFileCreationDate.Value = this.DateTimePickerFileCreationDate.DefaultValue;
+            this.DateTimePickerLastAccessedDate.Value = this.DateTimePickerLastAccessedDate.DefaultValue;
+            this.DateTimePickerLastWrittenDate.Value = this.DateTimePickerLastWrittenDate.DefaultValue;
+
         }
 
         private void btnSelectFile_Click(object sender, RoutedEventArgs e)
