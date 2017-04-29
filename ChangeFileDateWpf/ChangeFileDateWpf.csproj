@@ -112,5 +112,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChangeFileDateLibrary\ChangeFileDateLibrary.csproj">
+      <Project>{7159ee79-b4cf-42af-96f8-4027a4274bfc}</Project>
+      <Name>ChangeFileDateLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

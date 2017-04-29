@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Xceed.Wpf.Toolkit;
 
+using ChangeFileDateLib;
 
 namespace ChangeFileDateWpf
 {
@@ -24,12 +25,14 @@ namespace ChangeFileDateWpf
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private FileDateChanger _fileDateChanger;
         public MainWindow()
         {
             InitializeComponent();
 
+            _fileDateChanger = null;
             InitializeDateTimePickers();
-            
         }
 
         private void InitializeDateTimePickers()
@@ -50,25 +53,41 @@ namespace ChangeFileDateWpf
 
         private void textBoxSelectedFile_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            var textBox = sender as TextBox;
+            _fileDateChanger = new FileDateChanger(textBox.Text);
         }
 
         private void DateTimePickerFileCreationDate_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
-
         }
         private void DateTimePickerLastAccessedDate_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
-
         }
         private void DateTimePickerLastWrittenDate_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
-
         }
 
         private void btnChange_Click(object sender, RoutedEventArgs e)
         {
-
+            if (_fileDateChanger == null)
+            {
+                //warn user
+                return;
+            }
+            if (this.DateTimePickerFileCreationDate.Value.HasValue)
+            {
+                _fileDateChanger.CreationTime = this.DateTimePickerFileCreationDate.Value.Value;
+            }
+            if (this.DateTimePickerLastAccessedDate.Value.HasValue)
+            {
+                _fileDateChanger.CreationTime = this.DateTimePickerLastAccessedDate.Value.Value;
+            }
+            if (this.DateTimePickerLastWrittenDate.Value.HasValue)
+            {
+                _fileDateChanger.CreationTime = this.DateTimePickerLastWrittenDate.Value.Value;
+            }
+            _fileDateChanger.ChangeTimes();
+            //Success
         }
     }
 }
