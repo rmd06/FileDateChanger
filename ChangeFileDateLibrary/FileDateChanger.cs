@@ -7,7 +7,7 @@ namespace ChangeFileDateLib
 {
     public class FileDateChanger
     {
-        private FileInfo fileInfo;
+        private FileInfo _fileInfo;
 
         public DateTime CreationTime { get; set; }
         public DateTime LastAccessTime { get; set; }
@@ -15,7 +15,7 @@ namespace ChangeFileDateLib
 
         public FileDateChanger(string filePath)
         {
-            FileInfo fileInfo = new FileInfo(filePath);
+            this._fileInfo = new FileInfo(filePath);
         }
 
         public void ChangeTimes()
@@ -27,17 +27,17 @@ namespace ChangeFileDateLib
 
         private void ChangeCreationTime(DateTime timeToSet)
         {
-            fileInfo.CreationTime = timeToSet;
+            _fileInfo.CreationTime = timeToSet;
         }
 
         private void ChangeLastAccessTime(DateTime timeToSet)
         {
-            fileInfo.LastAccessTime = timeToSet;
+            _fileInfo.LastAccessTime = timeToSet;
         }
 
         private void ChangeLastWriteTime(DateTime timeToSet)
         {
-            fileInfo.LastWriteTime = timeToSet;
+            _fileInfo.LastWriteTime = timeToSet;
         }
     }
 }
