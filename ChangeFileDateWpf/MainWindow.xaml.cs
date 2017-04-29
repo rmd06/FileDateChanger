@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,18 +27,48 @@ namespace ChangeFileDateWpf
         public MainWindow()
         {
             InitializeComponent();
+
+            InitializeDateTimePickers();
             
+        }
+
+        private void InitializeDateTimePickers()
+        {
+            this.DateTimePickerFileCreationDate.DefaultValue = DateTime.Now;
+            this.DateTimePickerLastAccessedDate.DefaultValue = DateTime.Now;
+            this.DateTimePickerLastWrittenDate.DefaultValue = DateTime.Now;
         }
 
         private void btnSelectFile_Click(object sender, RoutedEventArgs e)
         {
-            
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                textBoxSelectedFile.Text = File.ReadAllText(openFileDialog.FileName);
+            }
         }
 
         private void textBoxSelectedFile_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
-        
+
+        private void DateTimePickerFileCreationDate_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+
+        }
+        private void DateTimePickerLastAccessedDate_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+
+        }
+        private void DateTimePickerLastWrittenDate_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+
+        }
+
+        private void btnChange_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

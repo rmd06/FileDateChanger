@@ -18,29 +18,83 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="15"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="Auto"/>
 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="99" HorizontalAlignment="Center" TextAlignment="Center">Select a file to change the file date property</TextBlock>
-        <TextBox Grid.Row="2" Grid.Column="0" Name="textBoxSelectedFile" TextChanged="textBoxSelectedFile_TextChanged" 
-                         IsReadOnly="True" IsManipulationEnabled="False" IsInactiveSelectionHighlightEnabled="False" IsReadOnlyCaretVisible="False"
-                         >
+        <TextBlock 
+            Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="99"
+            HorizontalAlignment="Center" TextAlignment="Center"
+            >
+            Select a file to change the file date property
+        </TextBlock>
+        <TextBox 
+            Grid.Row="2" Grid.Column="0"
+            Name="textBoxSelectedFile" TextChanged="textBoxSelectedFile_TextChanged" 
+            IsReadOnly="True" IsManipulationEnabled="False" IsInactiveSelectionHighlightEnabled="False" IsReadOnlyCaretVisible="False"
+            >
             C:\
         </TextBox>
-        <Button Grid.Row="2" Grid.Column="1" Name="btnSelectFile" Click="btnSelectFile_Click">
+        <Button 
+            Grid.Row="2" Grid.Column="1" 
+            Name="btnSelectFile" Click="btnSelectFile_Click"
+            >
             Select File
         </Button>
-        
-        
-        <xctk:DateTimePicker Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"></xctk:DateTimePicker>
-        <TextBlock Grid.Row="4" Grid.Column="1" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">File Creation Date</TextBlock>
-        <xctk:DateTimePicker Grid.Row="6" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"></xctk:DateTimePicker>
-        <TextBlock Grid.Row="6" Grid.Column="1" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">Last Accessed Date</TextBlock>
-        <xctk:DateTimePicker Grid.Row="8" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"></xctk:DateTimePicker>
-        <TextBlock Grid.Row="9" Grid.Column="1" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">Last Written Date</TextBlock>
+
+        <xctk:DateTimePicker 
+            Grid.Row="4" Grid.Column="0" 
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            Name="DateTimePickerFileCreationDate" ValueChanged="DateTimePickerFileCreationDate_ValueChanged"
+            DisplayDefaultValueOnEmptyText="True"
+            >
+            
+        </xctk:DateTimePicker>
+        <TextBlock 
+            Grid.Row="4" Grid.Column="1" 
+            TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">
+            File Creation Date
+        </TextBlock>
+        <xctk:DateTimePicker 
+            Grid.Row="6" Grid.Column="0" 
+            HorizontalAlignment="Center" VerticalAlignment="Center"
+            Name="DateTimePickerLastAccessedDate" ValueChanged="DateTimePickerLastAccessedDate_ValueChanged"
+            DisplayDefaultValueOnEmptyText="True"
+            >
+            
+        </xctk:DateTimePicker>
+        <TextBlock 
+            Grid.Row="6" Grid.Column="1" 
+            TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"
+            >
+            Last Accessed Date
+        </TextBlock>
+        <xctk:DateTimePicker 
+            Grid.Row="8" Grid.Column="0" 
+            HorizontalAlignment="Center" VerticalAlignment="Center"
+            Name="DateTimePickerLastWrittenDate" ValueChanged="DateTimePickerLastWrittenDate_ValueChanged"
+            DisplayDefaultValueOnEmptyText="True"
+            >
+            
+        </xctk:DateTimePicker>
+        <TextBlock 
+            Grid.Row="8" Grid.Column="1" 
+            TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"
+            >
+            Last Written Date
+        </TextBlock>
+        <Button
+            Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"
+            HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+            HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+            Name="btnChange" Click="btnChange_Click"
+            >
+            Change
+        </Button>
 
     </Grid>
 </Window>
