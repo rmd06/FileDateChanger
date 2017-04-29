@@ -47,7 +47,7 @@ namespace ChangeFileDateWpf
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == true)
             {
-                textBoxSelectedFile.Text = File.ReadAllText(openFileDialog.FileName);
+                textBoxSelectedFile.Text = openFileDialog.FileName;
             }
         }
 
