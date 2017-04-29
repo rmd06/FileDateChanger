@@ -76,7 +76,7 @@ namespace ChangeFileDateWpf
         {
             if (_fileDateChanger == null)
             {
-                //warn user
+                System.Windows.MessageBox.Show("Please Select a file to change the file date info", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
             if (this.DateTimePickerFileCreationDate.Value.HasValue)
@@ -85,13 +85,14 @@ namespace ChangeFileDateWpf
             }
             if (this.DateTimePickerLastAccessedDate.Value.HasValue)
             {
-                _fileDateChanger.CreationTime = this.DateTimePickerLastAccessedDate.Value.Value;
+                _fileDateChanger.LastAccessTime = this.DateTimePickerLastAccessedDate.Value.Value;
             }
             if (this.DateTimePickerLastWrittenDate.Value.HasValue)
             {
-                _fileDateChanger.CreationTime = this.DateTimePickerLastWrittenDate.Value.Value;
+                _fileDateChanger.LastWriteTime = this.DateTimePickerLastWrittenDate.Value.Value;
             }
             _fileDateChanger.ChangeTimes();
+            
             //Success
         }
     }
