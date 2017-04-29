@@ -65,10 +65,10 @@ namespace ChangeFileDateWpf
         private void DateTimePickerFileCreationDate_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
         }
-        private void DateTimePickerLastAccessedDate_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void DateTimePickerLastAccessDate_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
         }
-        private void DateTimePickerLastWrittenDate_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void DateTimePickerLastWriteDate_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
         }
 
