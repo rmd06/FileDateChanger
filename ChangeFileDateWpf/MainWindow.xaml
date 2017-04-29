@@ -6,7 +6,7 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:ChangeFileDateWpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="File Date Changer" Height="350" Width="525">
     <Grid Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top" >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
