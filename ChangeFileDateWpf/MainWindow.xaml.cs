@@ -38,12 +38,12 @@ namespace ChangeFileDateWpf
         private void InitializeDateTimePickers()
         {
             this.DateTimePickerFileCreationDate.DefaultValue = DateTime.Now;
-            this.DateTimePickerLastAccessedDate.DefaultValue = DateTime.Now;
-            this.DateTimePickerLastWrittenDate.DefaultValue = DateTime.Now;
+            this.DateTimePickerLastAccessDate.DefaultValue = DateTime.Now;
+            this.DateTimePickerLastWriteDate.DefaultValue = DateTime.Now;
 
             this.DateTimePickerFileCreationDate.Value = this.DateTimePickerFileCreationDate.DefaultValue;
-            this.DateTimePickerLastAccessedDate.Value = this.DateTimePickerLastAccessedDate.DefaultValue;
-            this.DateTimePickerLastWrittenDate.Value = this.DateTimePickerLastWrittenDate.DefaultValue;
+            this.DateTimePickerLastAccessDate.Value = this.DateTimePickerLastAccessDate.DefaultValue;
+            this.DateTimePickerLastWriteDate.Value = this.DateTimePickerLastWriteDate.DefaultValue;
 
         }
 
@@ -83,13 +83,13 @@ namespace ChangeFileDateWpf
             {
                 _fileDateChanger.CreationTime = this.DateTimePickerFileCreationDate.Value.Value;
             }
-            if (this.DateTimePickerLastAccessedDate.Value.HasValue)
+            if (this.DateTimePickerLastAccessDate.Value.HasValue)
             {
-                _fileDateChanger.LastAccessTime = this.DateTimePickerLastAccessedDate.Value.Value;
+                _fileDateChanger.LastAccessTime = this.DateTimePickerLastAccessDate.Value.Value;
             }
-            if (this.DateTimePickerLastWrittenDate.Value.HasValue)
+            if (this.DateTimePickerLastWriteDate.Value.HasValue)
             {
-                _fileDateChanger.LastWriteTime = this.DateTimePickerLastWrittenDate.Value.Value;
+                _fileDateChanger.LastWriteTime = this.DateTimePickerLastWriteDate.Value.Value;
             }
             _fileDateChanger.ChangeTimes();
 

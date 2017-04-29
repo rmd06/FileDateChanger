@@ -62,7 +62,7 @@
         <xctk:DateTimePicker 
             Grid.Row="6" Grid.Column="0" 
             HorizontalAlignment="Center" VerticalAlignment="Center"
-            Name="DateTimePickerLastAccessedDate" ValueChanged="DateTimePickerLastAccessedDate_ValueChanged"
+            Name="DateTimePickerLastAccessDate" ValueChanged="DateTimePickerLastAccessDate_ValueChanged"
             DisplayDefaultValueOnEmptyText="True"
             >
             
@@ -71,12 +71,12 @@
             Grid.Row="6" Grid.Column="1" 
             TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"
             >
-            Last Accessed Date
+            Last Access Date
         </TextBlock>
         <xctk:DateTimePicker 
             Grid.Row="8" Grid.Column="0" 
             HorizontalAlignment="Center" VerticalAlignment="Center"
-            Name="DateTimePickerLastWrittenDate" ValueChanged="DateTimePickerLastWrittenDate_ValueChanged"
+            Name="DateTimePickerLastWriteDate" ValueChanged="DateTimePickerLastWriteDate_ValueChanged"
             DisplayDefaultValueOnEmptyText="True"
             >
             
@@ -85,7 +85,7 @@
             Grid.Row="8" Grid.Column="1" 
             TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"
             >
-            Last Written Date
+            Last Write Date
         </TextBlock>
         <Button
             Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"
