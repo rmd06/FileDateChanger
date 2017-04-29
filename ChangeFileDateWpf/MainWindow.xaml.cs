@@ -92,8 +92,12 @@ namespace ChangeFileDateWpf
                 _fileDateChanger.LastWriteTime = this.DateTimePickerLastWrittenDate.Value.Value;
             }
             _fileDateChanger.ChangeTimes();
-            
-            //Success
+
+            System.Windows.MessageBox.Show($"File's date info was changed to " +
+                $"\nCreation Time: {_fileDateChanger.CreationTime}" +
+                $"\nLast Access Time: {_fileDateChanger.LastAccessTime}" +
+                $"\nLast Write Time: {_fileDateChanger.LastWriteTime}", 
+                "Success", MessageBoxButton.OK, MessageBoxImage.Warning);
         }
     }
 }
